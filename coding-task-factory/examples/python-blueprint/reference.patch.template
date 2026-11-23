@@ -1,0 +1,7 @@
+diff --git a/normalize.py b/normalize.py
+--- a/normalize.py
++++ b/normalize.py
+@@ -1,2 +1,2 @@
+ def normalize_label(value):
+-    return value
++    return " ".join(value.split()).upper()

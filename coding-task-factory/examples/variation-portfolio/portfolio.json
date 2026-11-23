@@ -1,0 +1,157 @@
+{
+  "comparison": {
+    "distinct_signatures": 6,
+    "likely_clone_groups": [],
+    "unscored_tasks": []
+  },
+  "portfolio_status": "not_validated",
+  "schema_version": 1,
+  "selection": {
+    "candidates_examined": 20,
+    "count": 6,
+    "policy": "earliest unique normalized task structures",
+    "search_limit": 10000,
+    "seed_start": 0
+  },
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git"
+  },
+  "tasks": [
+    {
+      "family": "strict-env-booleans",
+      "path": "seed-0",
+      "seed": 0,
+      "task_id": "strict-env-booleans-0",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "accepted-value-contract",
+          "alias-rejection",
+          "field-specific-assertion"
+        ],
+        "family": "strict-env-booleans",
+        "signature": "90c5bb8e5cb460000b4c",
+        "structure_signature": "4714d5cdc48ff232801c",
+        "target_symbols": [
+          "FRAUDGUARD_ENABLE_EXPIRED_KEY_SIGNAL",
+          "EnableExpiredKeySignal",
+          "configFromLookup"
+        ],
+        "variant": "reject-parsebool-aliases"
+      }
+    },
+    {
+      "family": "config-exempt-ids",
+      "path": "seed-1",
+      "seed": 1,
+      "task_id": "config-exempt-ids-1",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "control-character-policy",
+          "identifier-error-path",
+          "error-privacy"
+        ],
+        "family": "config-exempt-ids",
+        "signature": "12068c6fdd137788405a",
+        "structure_signature": "ddcb138d8fc2473b23ef",
+        "target_symbols": [
+          "ValidateConfig",
+          "ExemptVirtualKeyIDs"
+        ],
+        "variant": "embedded-control-character"
+      }
+    },
+    {
+      "family": "config-exempt-ids",
+      "path": "seed-2",
+      "seed": 2,
+      "task_id": "config-exempt-ids-2",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "trim-normalization",
+          "collision-detection",
+          "error-privacy"
+        ],
+        "family": "config-exempt-ids",
+        "signature": "2849e3e5fd40c82591c9",
+        "structure_signature": "d81c8ac5091adfb3c5ef",
+        "target_symbols": [
+          "ValidateConfig",
+          "ExemptVirtualKeyIDs"
+        ],
+        "variant": "trim-equivalent-duplicate"
+      }
+    },
+    {
+      "family": "duplicate-runtime-json-keys",
+      "path": "seed-5",
+      "seed": 5,
+      "task_id": "duplicate-runtime-json-keys-5",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "escaped-key-equivalence",
+          "array-nested-object",
+          "recursive-json-scan"
+        ],
+        "family": "duplicate-runtime-json-keys",
+        "signature": "fc86d4a26fb3bafd022e",
+        "structure_signature": "e1b043f7e070dc329785",
+        "target_symbols": [
+          "decodeRuntimeConfig",
+          "rejectDuplicateJSONKeys"
+        ],
+        "variant": "escaped-key-and-array-object"
+      }
+    },
+    {
+      "family": "strict-env-booleans",
+      "path": "seed-7",
+      "seed": 7,
+      "task_id": "strict-env-booleans-7",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "presence-boundary",
+          "empty-input",
+          "default-preservation",
+          "error-privacy"
+        ],
+        "family": "strict-env-booleans",
+        "signature": "46d1359e254b7ac9cffd",
+        "structure_signature": "37145ef14f0ac340993b",
+        "target_symbols": [
+          "FRAUDGUARD_ENABLE_PROMPT_LENGTH_SIGNAL",
+          "EnablePromptLengthSignal",
+          "configFromLookup"
+        ],
+        "variant": "unset-versus-empty-override"
+      }
+    },
+    {
+      "family": "duplicate-runtime-json-keys",
+      "path": "seed-19",
+      "seed": 19,
+      "task_id": "duplicate-runtime-json-keys-19",
+      "task_status": "not_validated",
+      "variation": {
+        "dimensions": [
+          "top-level-collision",
+          "nested-object-collision",
+          "recursive-json-scan"
+        ],
+        "family": "duplicate-runtime-json-keys",
+        "signature": "f3f4e191594c45bb5f7e",
+        "structure_signature": "fd3812e2bb88a5ddfee5",
+        "target_symbols": [
+          "decodeRuntimeConfig",
+          "rejectDuplicateJSONKeys"
+        ],
+        "variant": "top-level-and-nested-object"
+      }
+    }
+  ]
+}

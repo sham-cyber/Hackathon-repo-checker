@@ -1,0 +1,29 @@
+diff --git a/plugins/fraudguard/config_validator.go b/plugins/fraudguard/config_validator.go
+--- a/plugins/fraudguard/config_validator.go
++++ b/plugins/fraudguard/config_validator.go
+@@ -6,7 +6,8 @@
+ import (
+ 	"fmt"
+ 	"os"
+ 	"strconv"
+ 	"strings"
+ 	"time"
++	"unicode"
+ )
+@@ -80,11 +80,16 @@
+ 	if len(config.ExemptVirtualKeyIDs) > 10_000 {
+ 		return fmt.Errorf("fraudguard: exempt_virtual_key_ids cannot exceed 10000 entries")
+ 	}
+ 	for _, id := range config.ExemptVirtualKeyIDs {
+ 		id = strings.TrimSpace(id)
+ 		if id == "" || len(id) > 256 {
+ 			return fmt.Errorf("fraudguard: exempt_virtual_key_ids entries must be 1 to 256 bytes")
+ 		}
++		for _, character := range id {
++			if unicode.IsControl(character) {
++				return fmt.Errorf("fraudguard: exempt_virtual_key_ids entries cannot contain control characters")
++			}
++		}
+ 	}
+ 	return nil
+ }

@@ -1,0 +1,10 @@
+# Normalize user-facing labels
+
+Update `normalize_label` to collapse repeated whitespace, trim both ends, and
+uppercase the result. The seeded sample label is `task {{SEED}}`.
+
+## Acceptance criteria
+
+- `"  task {{SEED}}  "` becomes `"TASK {{SEED}}"`.
+- The operation is deterministic and does not modify its input.
+- The task's bundled native test passes.

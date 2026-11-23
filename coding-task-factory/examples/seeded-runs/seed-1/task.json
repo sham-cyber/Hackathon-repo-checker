@@ -1,0 +1,31 @@
+{
+  "family": "config-exempt-ids",
+  "reference": {
+    "path": "reference.patch",
+    "type": "git-patch"
+  },
+  "scenario": "Duplicate ID sample: agent-2033-1",
+  "schema_version": 1,
+  "seed": 1,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git"
+  },
+  "task_id": "config-exempt-ids-1",
+  "tests": {
+    "command_template": [
+      "go",
+      "test",
+      "-count=1",
+      "-run",
+      "<expected_test_names>",
+      "."
+    ],
+    "expected_baseline_failures": [
+      "TestGeneratedTaskRejectsTrimmedDuplicateExemptIDs"
+    ],
+    "path": "plugins/fraudguard/task_factory_generated_test.go",
+    "working_directory": "plugins/fraudguard"
+  },
+  "title": "Reject duplicate exemption identifiers"
+}

@@ -1,0 +1,21 @@
+schema_version = "1.4"
+
+[task]
+name = "innodata-frontier-ai/strict-env-booleans-7"
+description = "Distinguish unset and invalid boolean overrides"
+keywords = ["bifrost", "coding-task-factory", "fraudguard", "go", "innodata-frontier-ai", "strict-env-booleans"]
+
+[metadata]
+difficulty = "medium"
+category = "programming"
+tags = []
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+environment_mode = "shared"
+timeout_sec = 600
+
+[environment]
+network_mode = "no-network"

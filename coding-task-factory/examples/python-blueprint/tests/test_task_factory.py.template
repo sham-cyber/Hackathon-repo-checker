@@ -1,0 +1,11 @@
+import unittest
+
+from normalize import normalize_label
+
+
+class GeneratedTaskTests(unittest.TestCase):
+    def test_normalizes_spaces_and_case(self):
+        self.assertEqual(
+            normalize_label("  task {{SEED}}  "),
+            "TASK {{SEED}}",
+        )

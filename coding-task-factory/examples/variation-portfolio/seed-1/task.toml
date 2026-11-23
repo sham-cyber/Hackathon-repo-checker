@@ -1,0 +1,21 @@
+schema_version = "1.4"
+
+[task]
+name = "innodata-frontier-ai/config-exempt-ids-1"
+description = "Reject control characters in exemption IDs"
+keywords = ["bifrost", "coding-task-factory", "config-exempt-ids", "fraudguard", "go", "innodata-frontier-ai"]
+
+[metadata]
+difficulty = "medium"
+category = "programming"
+tags = []
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+environment_mode = "shared"
+timeout_sec = 600
+
+[environment]
+network_mode = "no-network"

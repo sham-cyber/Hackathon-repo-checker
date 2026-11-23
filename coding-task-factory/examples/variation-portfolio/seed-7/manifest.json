@@ -1,0 +1,169 @@
+{
+  "agent_runs": [],
+  "detected_languages": [
+    "Go",
+    "JavaScript",
+    "Shell",
+    "TypeScript"
+  ],
+  "family": "strict-env-booleans",
+  "files": {
+    "environment/Dockerfile": "66f834540ac73f9c580b8704c9b7aa3b330b7c76be4ab9b96d7a943ecf321926",
+    "environment/source.tar.gz": "74785204dd490c0bce370a650c9cebfcc689a9ffa7c1b126da14404951ac9321",
+    "instruction.md": "0d22acccc3c555fbb71786ffcb91e9d1479339d80461ff49e829701f4ea65b78",
+    "solution/reference.patch": "e7f861e48f3cff9dbbb4467581e469c4c139c630cd45b56d886380e87a329e25",
+    "solution/solve.sh": "85e66e3f698cb2c2f13ae6eea78b4c12d7a15b49f64acfaad002c9e8d593743f",
+    "task.json": "3312f6a40228ce5ee995859152b1818a3289e7aac21a03056a1ac07dd66bff9c",
+    "task.toml": "eecb120a63de25809facfecc309cf3c4a26dec4ae03e08d65453df11b8456eca",
+    "tests/payload/plugins/fraudguard/task_factory_generated_test.go": "0d896475f9ef4d9991cdeb991bee81474be5415a8ebb3f8dc403c2867d6b7328",
+    "tests/test.sh": "b3027a3215dbaa27bbc939ab84642eaa37958ca067a2875766d1b112e1197b52"
+  },
+  "generator_version": "0.1.0",
+  "patch_packages": [
+    "plugins/fraudguard"
+  ],
+  "patch_targets": [
+    "plugins/fraudguard/config_validator.go"
+  ],
+  "schema_version": 2,
+  "seed": 7,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git",
+    "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+  },
+  "task_id": "strict-env-booleans-7",
+  "task_status": "not_validated",
+  "validation": {
+    "harbor": {
+      "command_templates": [
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "nop"
+        ],
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "oracle"
+        ]
+      ],
+      "jobs": {},
+      "required_rewards": {
+        "nop": 0,
+        "oracle": 1
+      },
+      "status": "not_run"
+    },
+    "local_preflight": {
+      "baseline": {
+        "exit_code": 1,
+        "expected_failure_patterns": [
+          "(?m)^--- FAIL: TestGeneratedTaskDistinguishesUnsetAndInvalidBooleanOverrides(?:\\s|$)"
+        ],
+        "observed_failure_patterns": [],
+        "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+        "status": "unsupported_environment"
+      },
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "test",
+            "-coverprofile=/tmp/coding-task-validation-d_xre6cq/checkout/.task-factory-coverage/baseline.profile",
+            "-count=1",
+            "-run",
+            "^(TestGeneratedTaskDistinguishesUnsetAndInvalidBooleanOverrides)$",
+            "."
+          ],
+          "cwd": "/tmp/coding-task-validation-d_xre6cq/checkout/plugins/fraudguard",
+          "duration_seconds": 0.053,
+          "environment": {
+            "CARGO_NET_OFFLINE": "true",
+            "GOCACHE": "/home/runner/workspace/.cache/go-build",
+            "GOFLAGS": "-mod=readonly",
+            "GOPROXY": "off",
+            "GOSUMDB": "sum.golang.org",
+            "GOTOOLCHAIN": "auto",
+            "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+            "PIP_NO_INDEX": "1",
+            "PYTHONNOUSERSITE": "1",
+            "YARN_ENABLE_NETWORK": "0",
+            "npm_config_audit": "false",
+            "npm_config_fund": "false",
+            "npm_config_globalconfig": "/dev/null",
+            "npm_config_offline": "true",
+            "npm_config_userconfig": "/dev/null"
+          },
+          "exit_code": 1,
+          "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+          "rendered": "go test -coverprofile=/tmp/coding-task-validation-d_xre6cq/checkout/.task-factory-coverage/baseline.profile -count=1 -run '^(TestGeneratedTaskDistinguishesUnsetAndInvalidBooleanOverrides)$' ."
+        }
+      ],
+      "coverage": {
+        "baseline": {
+          "available": false,
+          "kind": "go",
+          "reason": "native test environment unavailable: go: download go1.27.3 for linux/amd64: toolchain not available"
+        },
+        "delta_percentage_points": null,
+        "kind": "go",
+        "patched_code_exercised": null,
+        "post_patch": {
+          "available": false,
+          "reason": null
+        },
+        "status": "unsupported",
+        "target_files": [
+          "plugins/fraudguard/config_validator.go"
+        ],
+        "target_packages": [
+          "plugins/fraudguard"
+        ]
+      },
+      "error": "test command could not run because the language runtime or dependencies are unavailable",
+      "isolation": "embedded pinned source snapshot extracted to a fresh temporary checkout",
+      "network_policy": {
+        "caller_credentials_passed_to_commands": false,
+        "common_package_manager_offline_flags": "enabled",
+        "factory_model_or_api_calls": "none",
+        "host_filesystem_isolation": "task tests run in a temporary checkout",
+        "host_network_isolation": "not enforced for local preflight; Harbor task uses no-network runtime"
+      },
+      "ran_at_utc": "2026-11-21T20:06:40.740970+00:00",
+      "reference": {
+        "status": "not_run"
+      },
+      "source_snapshot": {
+        "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+        "sha256": "1fe1589c3a1ee1f7e9a72613e9961897fbaf3964635f1b912e9f6bbcffd7a887",
+        "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+      },
+      "status": "unsupported",
+      "target_commit": "0ca3e119524ae5ad4b5333dc510275546b167b97"
+    }
+  },
+  "variation": {
+    "dimensions": [
+      "presence-boundary",
+      "empty-input",
+      "default-preservation",
+      "error-privacy"
+    ],
+    "family": "strict-env-booleans",
+    "signature": "46d1359e254b7ac9cffd",
+    "structure_signature": "37145ef14f0ac340993b",
+    "target_symbols": [
+      "FRAUDGUARD_ENABLE_PROMPT_LENGTH_SIGNAL",
+      "EnablePromptLengthSignal",
+      "configFromLookup"
+    ],
+    "variant": "unset-versus-empty-override"
+  }
+}

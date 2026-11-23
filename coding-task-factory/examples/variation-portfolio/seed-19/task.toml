@@ -1,0 +1,21 @@
+schema_version = "1.4"
+
+[task]
+name = "innodata-frontier-ai/duplicate-runtime-json-keys-19"
+description = "Reject ambiguous runtime configuration JSON"
+keywords = ["bifrost", "coding-task-factory", "duplicate-runtime-json-keys", "fraudguard", "go", "innodata-frontier-ai"]
+
+[metadata]
+difficulty = "medium"
+category = "programming"
+tags = []
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+environment_mode = "shared"
+timeout_sec = 600
+
+[environment]
+network_mode = "no-network"

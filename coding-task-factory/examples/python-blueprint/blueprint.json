@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "family": "python-label-normalization",
+  "title": "Normalize labels for seed {{SEED}}",
+  "instruction": "instruction.md.template",
+  "reference_patch": "reference.patch.template",
+  "harbor": {
+    "environment_dockerfile": "environment/Dockerfile.template",
+    "difficulty": "easy",
+    "keywords": ["python"],
+    "source_excludes": []
+  },
+  "tests": {
+    "files": [
+      {
+        "source": "tests/test_task_factory.py.template",
+        "package_path": "tests/test_task_factory.py",
+        "target_path": "tests/test_task_factory.py"
+      }
+    ],
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_task_factory.py",
+      "-v"
+    ],
+    "working_directory": ".",
+    "baseline_failure_patterns": [
+      "(?m)^FAIL: test_normalizes_spaces_and_case\\b"
+    ],
+    "reference_pass_pattern": "(?m)^OK$"
+  }
+}

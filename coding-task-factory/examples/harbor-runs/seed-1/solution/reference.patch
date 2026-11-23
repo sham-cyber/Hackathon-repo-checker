@@ -1,0 +1,20 @@
+diff --git a/plugins/fraudguard/config_validator.go b/plugins/fraudguard/config_validator.go
+--- a/plugins/fraudguard/config_validator.go
++++ b/plugins/fraudguard/config_validator.go
+@@ -80,11 +80,16 @@
+ 	if len(config.ExemptVirtualKeyIDs) > 10_000 {
+ 		return fmt.Errorf("fraudguard: exempt_virtual_key_ids cannot exceed 10000 entries")
+ 	}
++	seenExemptIDs := make(map[string]struct{}, len(config.ExemptVirtualKeyIDs))
+ 	for _, id := range config.ExemptVirtualKeyIDs {
+ 		id = strings.TrimSpace(id)
+ 		if id == "" || len(id) > 256 {
+ 			return fmt.Errorf("fraudguard: exempt_virtual_key_ids entries must be 1 to 256 bytes")
+ 		}
++		if _, exists := seenExemptIDs[id]; exists {
++			return fmt.Errorf("fraudguard: exempt_virtual_key_ids entries must be unique")
++		}
++		seenExemptIDs[id] = struct{}{}
+ 	}
+ 	return nil
+ }

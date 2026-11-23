@@ -1,0 +1,341 @@
+{
+  "family": "strict-env-booleans",
+  "files": {
+    "instruction.md": "c30ee44bc66e548505de4f6e99f3b856287dd99923bd5e21ddf9d1fdb9d16dce",
+    "plugins/fraudguard/task_factory_generated_test.go": "3027f885f52c4e371bd4b59efa1cf7b0ad2c814f25fb31ac5b7de45589cfc7e7",
+    "reference.patch": "e7f861e48f3cff9dbbb4467581e469c4c139c630cd45b56d886380e87a329e25",
+    "task.json": "19d994e2ea70e074b90f593f50b6aca9ad8cc25929d98941eea23c2d453b5e38"
+  },
+  "generator_version": "0.1.0",
+  "schema_version": 1,
+  "seed": 0,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git"
+  },
+  "task_id": "strict-env-booleans-0",
+  "task_status": "not_validated",
+  "validation": {
+    "baseline": {
+      "exit_code": 1,
+      "expected_failure_patterns": [
+        "(?m)^--- FAIL: TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords(?:\\s|$)"
+      ],
+      "observed_failure_patterns": [
+        "(?m)^--- FAIL: TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords(?:\\s|$)"
+      ],
+      "output": "--- FAIL: TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords (0.00s)\n    task_factory_generated_test.go:28: undocumented boolean alias \"1\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"0\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"t\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"F\" was accepted\nFAIL\nFAIL\tgithub.com/maximhq/bifrost/plugins/fraudguard\t0.059s\nFAIL\n",
+      "status": "failed_as_expected"
+    },
+    "commands": [
+      {
+        "argv": [
+          "git",
+          "init",
+          "-q",
+          "/tmp/coding-task-validation-r1c2kaps/checkout"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.052,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "",
+        "rendered": "git init -q /tmp/coding-task-validation-r1c2kaps/checkout"
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "remote",
+          "add",
+          "origin",
+          "/tmp/plugin-inspect.W5Lhso/target"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.038,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout remote add origin /tmp/plugin-inspect.W5Lhso/target"
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "fetch",
+          "--no-tags",
+          "--depth",
+          "1",
+          "origin",
+          "0ca3e119524ae5ad4b5333dc510275546b167b97"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.745,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "From /tmp/plugin-inspect.W5Lhso/target\n * branch            0ca3e119524ae5ad4b5333dc510275546b167b97 -> FETCH_HEAD\n",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout fetch --no-tags --depth 1 origin 0ca3e119524ae5ad4b5333dc510275546b167b97"
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "checkout",
+          "--detach",
+          "FETCH_HEAD"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.561,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "HEAD is now at 0ca3e11 Add optional Razorpay support link\n",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout checkout --detach FETCH_HEAD"
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.025,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "0ca3e119524ae5ad4b5333dc510275546b167b97\n",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout rev-parse HEAD"
+      },
+      {
+        "argv": [
+          "go",
+          "test",
+          "-count=1",
+          "-run",
+          "^(TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords)$",
+          "."
+        ],
+        "cwd": "/tmp/coding-task-validation-r1c2kaps/checkout/plugins/fraudguard",
+        "duration_seconds": 96.885,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 1,
+        "output": "--- FAIL: TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords (0.00s)\n    task_factory_generated_test.go:28: undocumented boolean alias \"1\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"0\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"t\" was accepted\n    task_factory_generated_test.go:28: undocumented boolean alias \"F\" was accepted\nFAIL\nFAIL\tgithub.com/maximhq/bifrost/plugins/fraudguard\t0.059s\nFAIL\n",
+        "rendered": "go test -count=1 -run '^(TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords)$' ."
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "apply",
+          "--check",
+          "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0/reference.patch"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.065,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout apply --check /home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0/reference.patch"
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/coding-task-validation-r1c2kaps/checkout",
+          "apply",
+          "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0/reference.patch"
+        ],
+        "cwd": "/home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0",
+        "duration_seconds": 0.026,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "",
+        "rendered": "git -C /tmp/coding-task-validation-r1c2kaps/checkout apply /home/runner/workspace/coding-task-factory/examples/seeded-runs/seed-0/reference.patch"
+      },
+      {
+        "argv": [
+          "go",
+          "test",
+          "-count=1",
+          "-run",
+          "^(TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords)$",
+          "."
+        ],
+        "cwd": "/tmp/coding-task-validation-r1c2kaps/checkout/plugins/fraudguard",
+        "duration_seconds": 7.766,
+        "environment": {
+          "CARGO_NET_OFFLINE": "true",
+          "GOFLAGS": "-mod=readonly",
+          "GOMODCACHE": "/home/runner/go/pkg/mod",
+          "GOPROXY": "off",
+          "GOSUMDB": "sum.golang.org",
+          "GOTOOLCHAIN": "auto",
+          "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+          "PIP_NO_INDEX": "1",
+          "PYTHONNOUSERSITE": "1",
+          "YARN_ENABLE_NETWORK": "0",
+          "npm_config_audit": "false",
+          "npm_config_fund": "false",
+          "npm_config_globalconfig": "/dev/null",
+          "npm_config_offline": "true",
+          "npm_config_userconfig": "/dev/null"
+        },
+        "exit_code": 0,
+        "output": "ok  \tgithub.com/maximhq/bifrost/plugins/fraudguard\t0.056s\n",
+        "rendered": "go test -count=1 -run '^(TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords)$' ."
+      }
+    ],
+    "isolation": "fresh temporary Git checkout; not an OS-level filesystem or network sandbox",
+    "network_policy": {
+      "caller_credentials_passed_to_commands": false,
+      "common_package_manager_offline_flags": "enabled",
+      "factory_model_or_api_calls": "none",
+      "host_filesystem_isolation": "not enforced",
+      "host_network_isolation": "not enforced"
+    },
+    "ran_at_utc": "2026-11-21T16:40:15.516132+00:00",
+    "reference": {
+      "exit_code": 0,
+      "output": "ok  \tgithub.com/maximhq/bifrost/plugins/fraudguard\t0.056s\n",
+      "pass_evidence_seen": true,
+      "pass_pattern": "(?m)^ok\\s+\\S+\\s+[0-9.]+s$",
+      "patch_applied": true,
+      "status": "passed"
+    },
+    "status": "valid",
+    "target_commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "target_source_used": "/tmp/plugin-inspect.W5Lhso/target"
+  }
+}

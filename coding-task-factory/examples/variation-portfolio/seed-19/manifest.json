@@ -1,0 +1,167 @@
+{
+  "agent_runs": [],
+  "detected_languages": [
+    "Go",
+    "JavaScript",
+    "Shell",
+    "TypeScript"
+  ],
+  "family": "duplicate-runtime-json-keys",
+  "files": {
+    "environment/Dockerfile": "66f834540ac73f9c580b8704c9b7aa3b330b7c76be4ab9b96d7a943ecf321926",
+    "environment/source.tar.gz": "74785204dd490c0bce370a650c9cebfcc689a9ffa7c1b126da14404951ac9321",
+    "instruction.md": "8c9c54ac9d5cc5eba93997e00fddfad56b5844af499863bb7047e7b8af799c77",
+    "solution/reference.patch": "31ecba3cd677dc198db7631143d645ac2ee12fdda497b6e5d49cad4208a434ac",
+    "solution/solve.sh": "85e66e3f698cb2c2f13ae6eea78b4c12d7a15b49f64acfaad002c9e8d593743f",
+    "task.json": "1a865b599c3270de437f76b0deb63854fb8664fea487fc280fab9589b2f12a4d",
+    "task.toml": "c7b09061ef7a48539b3dd544e2f8bf4ca04b95dd747475ee7fd6e79e6f8e9e06",
+    "tests/payload/plugins/fraudguard/task_factory_generated_test.go": "a68596f4b0b7c7017e3ca59d55e31f7a5fd7e40cf71eda32144eba3b8c51afee",
+    "tests/test.sh": "ab8b31f04e51488826ceeb60c5c1a60291071cbcee019a5fe60b4c24ca06ce64"
+  },
+  "generator_version": "0.1.0",
+  "patch_packages": [
+    "plugins/fraudguard"
+  ],
+  "patch_targets": [
+    "plugins/fraudguard/config_loader.go"
+  ],
+  "schema_version": 2,
+  "seed": 19,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git",
+    "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+  },
+  "task_id": "duplicate-runtime-json-keys-19",
+  "task_status": "not_validated",
+  "validation": {
+    "harbor": {
+      "command_templates": [
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "nop"
+        ],
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "oracle"
+        ]
+      ],
+      "jobs": {},
+      "required_rewards": {
+        "nop": 0,
+        "oracle": 1
+      },
+      "status": "not_run"
+    },
+    "local_preflight": {
+      "baseline": {
+        "exit_code": 1,
+        "expected_failure_patterns": [
+          "(?m)^--- FAIL: TestGeneratedTaskRejectsDuplicateRuntimeJSONKeys(?:\\s|$)"
+        ],
+        "observed_failure_patterns": [],
+        "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+        "status": "unsupported_environment"
+      },
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "test",
+            "-coverprofile=/tmp/coding-task-validation-g0ie4703/checkout/.task-factory-coverage/baseline.profile",
+            "-count=1",
+            "-run",
+            "^(TestGeneratedTaskRejectsDuplicateRuntimeJSONKeys)$",
+            "."
+          ],
+          "cwd": "/tmp/coding-task-validation-g0ie4703/checkout/plugins/fraudguard",
+          "duration_seconds": 0.05,
+          "environment": {
+            "CARGO_NET_OFFLINE": "true",
+            "GOCACHE": "/home/runner/workspace/.cache/go-build",
+            "GOFLAGS": "-mod=readonly",
+            "GOPROXY": "off",
+            "GOSUMDB": "sum.golang.org",
+            "GOTOOLCHAIN": "auto",
+            "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+            "PIP_NO_INDEX": "1",
+            "PYTHONNOUSERSITE": "1",
+            "YARN_ENABLE_NETWORK": "0",
+            "npm_config_audit": "false",
+            "npm_config_fund": "false",
+            "npm_config_globalconfig": "/dev/null",
+            "npm_config_offline": "true",
+            "npm_config_userconfig": "/dev/null"
+          },
+          "exit_code": 1,
+          "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+          "rendered": "go test -coverprofile=/tmp/coding-task-validation-g0ie4703/checkout/.task-factory-coverage/baseline.profile -count=1 -run '^(TestGeneratedTaskRejectsDuplicateRuntimeJSONKeys)$' ."
+        }
+      ],
+      "coverage": {
+        "baseline": {
+          "available": false,
+          "kind": "go",
+          "reason": "native test environment unavailable: go: download go1.27.3 for linux/amd64: toolchain not available"
+        },
+        "delta_percentage_points": null,
+        "kind": "go",
+        "patched_code_exercised": null,
+        "post_patch": {
+          "available": false,
+          "reason": null
+        },
+        "status": "unsupported",
+        "target_files": [
+          "plugins/fraudguard/config_loader.go"
+        ],
+        "target_packages": [
+          "plugins/fraudguard"
+        ]
+      },
+      "error": "test command could not run because the language runtime or dependencies are unavailable",
+      "isolation": "embedded pinned source snapshot extracted to a fresh temporary checkout",
+      "network_policy": {
+        "caller_credentials_passed_to_commands": false,
+        "common_package_manager_offline_flags": "enabled",
+        "factory_model_or_api_calls": "none",
+        "host_filesystem_isolation": "task tests run in a temporary checkout",
+        "host_network_isolation": "not enforced for local preflight; Harbor task uses no-network runtime"
+      },
+      "ran_at_utc": "2026-11-21T20:06:41.718036+00:00",
+      "reference": {
+        "status": "not_run"
+      },
+      "source_snapshot": {
+        "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+        "sha256": "1fe1589c3a1ee1f7e9a72613e9961897fbaf3964635f1b912e9f6bbcffd7a887",
+        "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+      },
+      "status": "unsupported",
+      "target_commit": "0ca3e119524ae5ad4b5333dc510275546b167b97"
+    }
+  },
+  "variation": {
+    "dimensions": [
+      "top-level-collision",
+      "nested-object-collision",
+      "recursive-json-scan"
+    ],
+    "family": "duplicate-runtime-json-keys",
+    "signature": "f3f4e191594c45bb5f7e",
+    "structure_signature": "fd3812e2bb88a5ddfee5",
+    "target_symbols": [
+      "decodeRuntimeConfig",
+      "rejectDuplicateJSONKeys"
+    ],
+    "variant": "top-level-and-nested-object"
+  }
+}

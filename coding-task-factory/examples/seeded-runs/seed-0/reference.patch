@@ -1,0 +1,16 @@
+diff --git a/plugins/fraudguard/config_validator.go b/plugins/fraudguard/config_validator.go
+--- a/plugins/fraudguard/config_validator.go
++++ b/plugins/fraudguard/config_validator.go
+@@ -179,5 +179,10 @@
+-		parsed, err := strconv.ParseBool(strings.TrimSpace(value))
+-		if err != nil {
++		var parsed bool
++		switch strings.ToLower(strings.TrimSpace(value)) {
++		case "true":
++			parsed = true
++		case "false":
++			parsed = false
++		default:
+ 			return Config{}, fmt.Errorf("fraudguard: %s must be true or false", override.name)
+ 		}
+ 		override.set(parsed)

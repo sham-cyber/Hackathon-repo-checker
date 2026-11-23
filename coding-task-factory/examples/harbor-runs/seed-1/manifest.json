@@ -1,0 +1,123 @@
+{
+  "agent_runs": [],
+  "detected_languages": [
+    "Go",
+    "JavaScript",
+    "Shell",
+    "TypeScript"
+  ],
+  "family": "config-exempt-ids",
+  "files": {
+    "environment/Dockerfile": "66f834540ac73f9c580b8704c9b7aa3b330b7c76be4ab9b96d7a943ecf321926",
+    "environment/source.tar.gz": "74785204dd490c0bce370a650c9cebfcc689a9ffa7c1b126da14404951ac9321",
+    "instruction.md": "4414b5c60496819d742ce6c529f5b148064c178d2efa5aa73e10348502958020",
+    "solution/reference.patch": "cff5cea0258f752b71af9badc1426be40a881435b169cbd67e37424d6c3809ef",
+    "solution/solve.sh": "85e66e3f698cb2c2f13ae6eea78b4c12d7a15b49f64acfaad002c9e8d593743f",
+    "task.json": "eedb378670084b8f3ccae64afefc8004088bb09595072d59c0602c913d9dc720",
+    "task.toml": "5d297229093516da59e383d8665e0684ef93e940d120bb540fb604726700e87b",
+    "tests/payload/plugins/fraudguard/task_factory_generated_test.go": "4f3ef2b533338bd8aebb169fcee95f950fae42934d07068d4e9979c2f4bcf825",
+    "tests/test.sh": "583c3eaeba0e98625ee9020b7d56c7190d67a9e516932a2e7f988a82c8450da1"
+  },
+  "generator_version": "0.1.0",
+  "schema_version": 2,
+  "seed": 1,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git",
+    "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+  },
+  "task_id": "config-exempt-ids-1",
+  "task_status": "not_validated",
+  "validation": {
+    "harbor": {
+      "command_templates": [
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "nop"
+        ],
+        [
+          "harbor",
+          "run",
+          "-p",
+          "<task-directory>",
+          "-a",
+          "oracle"
+        ]
+      ],
+      "jobs": {},
+      "required_rewards": {
+        "nop": 0,
+        "oracle": 1
+      },
+      "status": "not_run"
+    },
+    "local_preflight": {
+      "baseline": {
+        "exit_code": 1,
+        "expected_failure_patterns": [
+          "(?m)^--- FAIL: TestGeneratedTaskRejectsTrimmedDuplicateExemptIDs(?:\\s|$)"
+        ],
+        "observed_failure_patterns": [],
+        "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+        "status": "unsupported_environment"
+      },
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "test",
+            "-count=1",
+            "-run",
+            "^(TestGeneratedTaskRejectsTrimmedDuplicateExemptIDs)$",
+            "."
+          ],
+          "cwd": "/tmp/coding-task-validation-pinysrie/checkout/plugins/fraudguard",
+          "duration_seconds": 0.059,
+          "environment": {
+            "CARGO_NET_OFFLINE": "true",
+            "GOFLAGS": "-mod=readonly",
+            "GOPROXY": "off",
+            "GOSUMDB": "sum.golang.org",
+            "GOTOOLCHAIN": "auto",
+            "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+            "PIP_NO_INDEX": "1",
+            "PYTHONNOUSERSITE": "1",
+            "YARN_ENABLE_NETWORK": "0",
+            "npm_config_audit": "false",
+            "npm_config_fund": "false",
+            "npm_config_globalconfig": "/dev/null",
+            "npm_config_offline": "true",
+            "npm_config_userconfig": "/dev/null"
+          },
+          "exit_code": 1,
+          "output": "go: downloading go1.27.3 (linux/amd64)\ngo: download go1.27.3 for linux/amd64: toolchain not available\n",
+          "rendered": "go test -count=1 -run '^(TestGeneratedTaskRejectsTrimmedDuplicateExemptIDs)$' ."
+        }
+      ],
+      "error": "test command could not run because the language runtime or dependencies are unavailable",
+      "isolation": "embedded pinned source snapshot extracted to a fresh temporary checkout",
+      "network_policy": {
+        "caller_credentials_passed_to_commands": false,
+        "common_package_manager_offline_flags": "enabled",
+        "factory_model_or_api_calls": "none",
+        "host_filesystem_isolation": "task tests run in a temporary checkout",
+        "host_network_isolation": "not enforced for local preflight; Harbor task uses no-network runtime"
+      },
+      "ran_at_utc": "2026-11-21T18:56:20.409443+00:00",
+      "reference": {
+        "status": "not_run"
+      },
+      "source_snapshot": {
+        "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+        "sha256": "1fe1589c3a1ee1f7e9a72613e9961897fbaf3964635f1b912e9f6bbcffd7a887",
+        "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+      },
+      "status": "unsupported",
+      "target_commit": "0ca3e119524ae5ad4b5333dc510275546b167b97"
+    }
+  }
+}

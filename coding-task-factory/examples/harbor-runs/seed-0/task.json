@@ -1,0 +1,63 @@
+{
+  "detected_languages": [
+    "Go",
+    "JavaScript",
+    "Shell",
+    "TypeScript"
+  ],
+  "family": "strict-env-booleans",
+  "generation_mode": "bundled-seeded-recipe",
+  "harbor": {
+    "network_mode": "no-network",
+    "reward_file": "/logs/verifier/reward.txt",
+    "source_snapshot": {
+      "archive": "environment/source.tar.gz",
+      "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+      "excludes": [
+        ".agents/**",
+        ".conversation/**",
+        "release-assets/**"
+      ],
+      "sha256": "74785204dd490c0bce370a650c9cebfcc689a9ffa7c1b126da14404951ac9321",
+      "tree": "3d8db9b1728c9de51a630cb0d64d5ed32ad19a0e"
+    },
+    "task_name": "innodata-frontier-ai/strict-env-booleans-0"
+  },
+  "reference": {
+    "path": "solution/reference.patch",
+    "type": "git-patch"
+  },
+  "scenario": "Selected override: FRAUDGUARD_ENABLE_EXPIRED_KEY_SIGNAL",
+  "schema_version": 2,
+  "seed": 0,
+  "target": {
+    "commit": "0ca3e119524ae5ad4b5333dc510275546b167b97",
+    "repository": "https://github.com/sham-cyber/Plugin.git"
+  },
+  "task_id": "strict-env-booleans-0",
+  "tests": {
+    "baseline_failure_patterns": [
+      "(?m)^--- FAIL: TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords(?:\\s|$)"
+    ],
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-run",
+      "^(TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords)$",
+      "."
+    ],
+    "expected_baseline_failures": [
+      "TestGeneratedTaskAcceptsOnlyDocumentedBooleanWords"
+    ],
+    "files": [
+      {
+        "package_path": "tests/payload/plugins/fraudguard/task_factory_generated_test.go",
+        "target_path": "plugins/fraudguard/task_factory_generated_test.go"
+      }
+    ],
+    "reference_pass_pattern": "(?m)^ok\\s+\\S+\\s+[0-9.]+s$",
+    "working_directory": "plugins/fraudguard"
+  },
+  "title": "Accept only documented boolean environment values"
+}
