@@ -1,6 +1,6 @@
 # Hackathon Repo Checker
 
-Hackathon Repo Checker is a project by [Saad Cheema](https://github.com/saadcheema-6242) and [Sham](https://github.com/sham-cyber).
+Hackathon Repo Checker is a project by [Muhammad Saad Cheema](https://github.com/saadcheema-6242) and [Sham Ratan Mohite](https://github.com/sham-cyber).
 
 The project is in early development. We’re working out which checks will help hackathon participants and organizers review submissions.
 
@@ -10,4 +10,4 @@ Open an issue to suggest a check, report a problem, or discuss a proposed change
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache License, Version 2.0](LICENSE).
