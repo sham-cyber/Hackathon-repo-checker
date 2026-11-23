@@ -10,4 +10,6 @@ Open an issue to suggest a check, report a problem, or discuss a proposed change
 
 ## License
 
+Copyright 2026 Muhammad Saad Cheema and Sham Ratan Mohite.
+
 This project is licensed under the [Apache License, Version 2.0](LICENSE).
