@@ -10,4 +10,4 @@ Open an issue to suggest a check, report a problem, or discuss a proposed change
 
 ## License
 
-The maintainers are deciding on an open-source license.
+This project is licensed under the [MIT License](LICENSE).
